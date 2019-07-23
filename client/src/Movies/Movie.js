@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const Movie = (props) => {
   const [movie, setMovie] = useState();
+  
  
   useEffect(() => {
     const id = props.match.params.id;
@@ -51,7 +52,7 @@ const Movie = (props) => {
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
+      <div className="save-button" onClick={ () => props.addToSavedList(movie)}>Save</div>
     </div>
   );
 }
